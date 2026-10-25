@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Arctic Thunder">
+<meta name="theme-color" content="#0b1d3a">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/style.css">
+<title>Arctic Thunder</title>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud" class="hidden">
+  <div class="hud-top">
+    <div class="pcard p1" id="card0">
+      <div class="pname">🐧 Player 1</div>
+      <div class="hpbar"><div class="hpfill" id="hp0"></div></div>
+    </div>
+    <div class="hud-center">
+      <div id="turnText">Player 1's turn</div>
+      <div class="windbox">
+        <span class="wlabel">WIND</span>
+        <div class="windbar"><div class="windfill" id="windFill"></div><div class="windmid"></div></div>
+        <span id="windText">0</span>
+      </div>
+    </div>
+    <div class="pcard p2" id="card1">
+      <div class="pname">Player 2 🐧</div>
+      <div class="hpbar"><div class="hpfill" id="hp1"></div></div>
+    </div>
+  </div>
+  <button id="btnMute" class="btn small" aria-label="Mute">🔊</button>
+  <div class="hud-bottom">
+    <div class="group left">
+      <button id="btnLeft" class="btn walk" aria-label="Walk left">◀</button>
+      <button id="btnRight" class="btn walk" aria-label="Walk right">▶</button>
+      <div class="movebox"><div class="mlabel">STEPS</div><div class="movebar"><div id="moveFill"></div></div></div>
+    </div>
+    <div id="aimInfo">Drag to aim</div>
+    <div class="group right">
+      <button id="btnWeapon" class="btn weapon">❄️ Snowball</button>
+      <button id="btnFire" class="btn fire">FIRE</button>
+    </div>
+  </div>
+</div>
+
+<div id="banner"></div>
+
+<div id="title" class="overlay">
+  <div class="panel">
+    <h1>Arctic <span>Thunder</span></h1>
+    <p class="sub">Penguin artillery · pass &amp; play</p>
+    <button id="btnStart" class="btn big">▶ Start Game</button>
+    <ul class="howto">
+      <li><b>Drag</b> anywhere and pull back (slingshot) to aim &amp; set power</li>
+      <li><b>◀ ▶</b> waddle a few steps &nbsp;·&nbsp; <b>FIRE</b> to throw</li>
+      <li>❄️ Snowball: unlimited &nbsp;·&nbsp; 🐟 Fish Bomb: big boom, 2 per game</li>
+      <li>Watch the wind! Water = you're out.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="win" class="overlay hidden">
+  <div class="panel">
+    <h1 id="winText">Player 1 wins!</h1>
+    <p class="sub" id="winSub"></p>
+    <button id="btnRematch" class="btn big">🔁 Rematch</button>
+    <button id="btnMenu" class="btn">Menu</button>
+  </div>
+</div>
+
+<div id="rotate" class="overlay">
+  <div class="panel">
+    <div class="phone">📱</div>
+    <h2>Rotate your phone</h2>
+    <p class="sub">Arctic Thunder plays best in landscape.</p>
+    <button id="btnPortrait" class="btn">Play in portrait anyway</button>
+  </div>
+</div>
+
+<script src="js/audio.js"></script>
+<script src="js/terrain.js"></script>
+<script src="js/penguin.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
